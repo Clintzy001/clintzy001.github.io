@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Tech Blog | Clintzy Art's World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .blog-container { padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .blog-post { background: #161616; border-radius: 12px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
+        .blog-post:hover { border-color: var(--gold); }
+        .blog-img { width: 100%; height: 200px; background: #333; object-fit: cover; }
+        .blog-info { padding: 25px; }
+        .blog-info h2 { font-family: 'Playfair Display'; color: var(--gold); margin-bottom: 10px; font-size: 1.4rem; }
+        .blog-info p { color: #888; font-size: 0.9rem; line-height: 1.6; }
+        .read-more { display: inline-block; margin-top: 15px; color: var(--gold); text-decoration: none; font-weight: bold; }
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo.png" alt="Clintzy Art Logo"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="ads.html">Ads</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div style="text-align: center; padding: 60px 8% 20px;">
+            <h1 style="font-family: 'Playfair Display'; font-size: 3rem; color: var(--gold);">Our Journal</h1>
+            <p style="color: #666;">Sharing stories of framing excellence and digital innovation.</p>
+        </div>
+
+        <section class="blog-container">
+            <article class="blog-post">
+                <img src="post1.jpg" alt="Framing" class="blog-img">
+                <div class="blog-info">
+                    <h2>How to Choose the Right Frame for Your Home</h2>
+                    <p>Discover the secrets to matching frame styles with your interior decor to make your art pop...</p>
+                    <a href="#" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <img src="post2.jpg" alt="Web Tech" class="blog-img">
+                <div class="blog-info">
+                    <h2>Web Trends to Watch in 2025</h2>
+                    <p>From AI-driven layouts to minimalist luxury design, see what's shaping the digital world in Kano...</p>
+                    <a href="#" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3 style="color: #fff; font-family: 'Playfair Display';">CLINTZY ART</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div style="color: #bbb;">
+                <p>© 2025 Clintzy Art's World</p>
+                <a href="terms.html" style="color:var(--gold); text-decoration:none; font-size: 0.8rem;">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
