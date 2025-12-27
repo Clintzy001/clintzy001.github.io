@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertise With Us | Clintzy Art's World</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A;
+            --light-dark: #161616;
+            --white: #ffffff;
+        }
+
+        body { 
+            background-color: var(--dark); 
+            color: var(--white); 
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION --- */
+        header { 
+            background: #ffffff; 
+            padding: 15px 5%; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
+
+        .logo img { height: 45px; width: auto; display: block; }
+
+        nav ul { display: flex; list-style: none; gap: 35px; margin: 0; padding: 0; }
+
+        nav ul li a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- CONTENT --- */
+        main { flex: 1; }
+        
+        .ads-hero { padding: 100px 8% 40px; text-align: center; }
+        .ads-hero h1 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 3rem; margin-bottom: 10px; }
+        .ads-hero p { color: #888; font-size: 1.1rem; }
+
+        /* --- PRICING GRID --- */
+        .pricing-section { padding: 40px 5% 100px; }
+        
+        .pricing-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: auto; 
+            align-items: stretch;
+        }
+
+        .price-card { 
+            background: var(--light-dark); 
+            padding: 50px 30px; 
+            border-radius: 20px; 
+            border: 1px solid #222; 
+            text-align: center; 
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--gold);
+            transform: scale(1.05);
+            background: #111;
+            z-index: 2;
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .price-card:hover { 
+            border-color: var(--gold); 
+            transform: translateY(-10px); 
+        }
+
+        .price-card h3 { font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 1px; }
+
+        .price-card h2 { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--gold); 
+            font-size: 3rem; 
+            margin: 20px 0; 
+        }
+
+        .price-card h2 span { font-size: 0.9rem; color: #666; font-family: 'Poppins', sans-serif; font-weight: 400; }
+
+        .price-card ul { 
+            list-style: none; 
+            margin: 30px 0; 
+            color: #bbb; 
+            padding: 0; 
+            text-align: left;
+            flex-grow: 1; 
+        }
+
+        .price-card li { margin-bottom: 15px; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+        .price-card li i { color: var(--gold); font-size: 0.8rem; }
+
+        .select-btn { 
+            display: block; 
+            background: transparent; 
+            color: var(--gold); 
+            padding: 14px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            border: 2px solid var(--gold);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .featured .select-btn { background: var(--gold); color: #000; }
+        .select-btn:hover { background: var(--gold); color: #000; }
+
+        /* --- UNIFIED FOOTER STYLING --- */
+        footer {
+            background: #000;
+            padding: 60px 8% 20px;
+            border-top: 2px solid var(--gold);
+            color: #fff;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-tagline { color: #888; margin-bottom: 20px; }
+        .footer-column p { color: #bbb; margin-bottom: 10px; font-size: 0.9rem; }
+        .footer-column p i { color: var(--gold); margin-right: 10px; }
+
+        .social-icons { display: flex; gap: 15px; margin-top: 15px; }
+        .social-icons a {
+            width: 40px; height: 40px; background: #222; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; text-decoration: none; transition: 0.3s;
+        }
+        .social-icons a:hover { background: var(--gold); color: #000; transform: translateY(-5px); }
+
+        .call-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--gold); color: #000; padding: 12px 25px;
+            border-radius: 5px; text-decoration: none; font-weight: bold;
+            margin-top: 15px; transition: 0.3s;
+        }
+        .call-btn:hover { background: var(--white); transform: scale(1.05); }
+
+        .footer-bottom {
+            text-align: center; border-top: 1px solid #222;
+            margin-top: 50px; padding-top: 25px; font-size: 0.8rem; color: #666;
+        }
+        .footer-links a { color: var(--gold); text-decoration: none; }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 1100px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .price-card.featured { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            nav { flex-direction: column; gap: 15px; }
+            .ads-hero h1 { font-size: 2.2rem; }
+            .footer-grid { text-align: center; }
+            .social-icons { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo.png" alt="Clintzy Art Logo"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="ads.html" style="color:var(--gold);">Ads</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="ads-hero">
+            <h1>Advertising Plans</h1>
+            <p>Elevate your brand with premium placement across our platform.</p>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <h2>₦5k<span>/wk</span></h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Sidebar Ad Placement</li>
+                        <li><i class="fas fa-check"></i> Blog Footer Link</li>
+                        <li><i class="fas fa-check"></i> Standard Support</li>
+                    </ul>
+                    <a href="https://wa.me/2347051337399" class="select-btn">Get Started</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Business Pro</h3>
+                    <h2>₦15k<span>/mo</span></h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Home Page Featured Ad</strong></li>
+                        <li><i class="fas fa-check"></i> 1 Sponsored Blog Post</li>
+                        <li><i class="fas fa-check"></i> Social Media Shoutout</li>
+                        <li><i class="fas fa-check"></i> Priority Ad Ranking</li>
+                    </ul>
+                    <a href="https://wa.me/2347051337399" class="select-btn">Choose Plan</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <h2>₦40k<span>/3mo</span></h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> All Pro Features</li>
+                        <li><i class="fas fa-check"></i> Logo on All Pages</li>
+                        <li><i class="fas fa-check"></i> Quarterly Analytics</li>
+                        <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                    </ul>
+                    <a href="https://wa.me/2347051337399" class="select-btn">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-logo">CLINTZY ART</h3>
+                <p class="footer-tagline">Excellence in Picture Framing & Web Innovation.</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/2347051337399" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Visit Our Studio</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Hajj Camp, Kano State, Nigeria</p>
+                <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
+                <a href="tel:+2347051337399" class="call-btn">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Clintzy Art's World | All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
