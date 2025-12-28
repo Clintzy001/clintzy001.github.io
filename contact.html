@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Clintzy Art's World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A;
+            --light-dark: #161616;
+            --white: #ffffff;
+        }
+
+        body { 
+            background-color: var(--dark); 
+            color: var(--white); 
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- REFINED NAVIGATION --- */
+        header {
+            background: #ffffff;
+            padding: 8px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo img { height: 28px; width: auto; display: block; }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav ul li a.active, nav ul li a:hover { color: var(--gold); }
+
+        /* --- ADS BANNER CSS --- */
+        .site-ad-container {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .site-ad-wrapper {
+            background: #ffffff;
+            width: 100%;
+            max-width: 970px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .ad-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.1);
+            color: #666;
+            font-size: 8px;
+            padding: 1px 4px;
+            font-weight: bold;
+        }
+
+        .ad-link { width: 100%; height: 100%; display: flex; }
+
+        .ad-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .ad-info { padding: 0 10px; color: #ccc; font-size: 10px; }
+
+        /* --- CONTACT WRAPPER --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px 8% 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-info h2 { 
+            font-family: 'Playfair Display', serif; 
+            color: var(--gold); 
+            font-size: 2rem;
+            margin-bottom: 15px; 
+        }
+        .contact-info h2 span { color: var(--white); }
+        
+        .contact-info p { font-size: 0.85rem; line-height: 1.6; }
+
+        .info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; color: #bbb; }
+        .info-item i { color: var(--gold); font-size: 1rem; }
+        .info-item p { margin: 0; font-size: 0.85rem; }
+
+        .contact-form-container {
+            background: var(--light-dark);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #222;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 0.75rem; color: #aaa; text-transform: uppercase; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover { background: var(--white); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000;
+            padding: 50px 8% 20px;
+            border-top: 1px solid var(--gold);
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; }
+        .footer-column p { color: #bbb; margin-bottom: 8px; font-size: 0.8rem; }
+        
+        .social-icons { display: flex; gap: 12px; margin-top: 12px; }
+        .social-icons a {
+            width: 35px; height: 35px; background: #111; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; text-decoration: none; font-size: 0.9rem;
+        }
+
+        .footer-bottom { text-align: center; border-top: 1px solid #111; margin-top: 40px; padding-top: 20px; font-size: 0.7rem; color: #555; }
+
+        @media (max-width: 768px) {
+            .contact-wrapper { grid-template-columns: 1fr; padding: 30px 5%; }
+            .site-ad-wrapper { height: 60px; }
+            nav ul { gap: 10px; }
+            nav ul li a { font-size: 0.55rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.png" alt="Clintzy Arts World Logo">
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="ads.html">Ads</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <h2>Get In <span>Touch</span></h2>
+            <p style="color: #888; margin-bottom: 25px;">Whether you need a custom frame, a new website, or business branding, we are here to help.</p>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Hajj Camp, Kano State, Nigeria</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <p>+234 705 133 7399</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p>clintzyartsworld@gmail.com</p>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15598.058354673646!2d8.5674061!3d12.0114002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae7968504f7623%3A0xc66578051a89c3b8!2sHajj%20Camp%2C%20Kano!5e0!3m2!1sen!2sng!4v1711234567890!5m2!1sen!2sng" width="100%" height="220" style="border:0; border-radius: 8px; margin-top: 20px; filter: grayscale(1) invert(1) opacity(0.7);" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="contact-form-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="message" rows="4" placeholder="Briefly describe what you need..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="site-ad-container">
+        <div class="site-ad-wrapper">
+            <span class="ad-label">AD</span>
+            <a href="ads.html" class="ad-link">
+                <img src="your-banner.jpg" alt="Special Promotion" class="ad-banner-img">
+            </a>
+            <div class="ad-info">
+                <i class="fas fa-info-circle"></i>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>CLINTZY ART</h3>
+                <p>Excellence in Picture Framing & Web Innovation.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Visit Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Hajj Camp, Kano</p>
+                <p><i class="fas fa-phone-alt"></i> +234 705 133 7399</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Clintzy Art's World | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you for reaching out to Clintzy Art's World! We have received your message and will get back to you shortly.");
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
