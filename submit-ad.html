@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Ad | Clintzy Art's World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A;
+            --light-dark: #161616;
+            --white: #ffffff;
+        }
+
+        body { background-color: var(--dark); color: var(--white); font-family: 'Poppins', sans-serif; margin: 0; }
+
+        /* --- MATCHED HEADER & NAV SPACING --- */
+        header { 
+            background: #ffffff; 
+            padding: 10px 4%; /* Reduced vertical padding to match image height */
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+        }
+
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1400px; /* Wider container to allow edge-to-edge look */
+            margin: 0 auto; 
+        }
+
+        /* Adjusted Logo Height to match reference text scale */
+        .logo img { 
+            height: 35px; 
+            width: auto; 
+            display: block; 
+            object-fit: contain;
+        }
+
+        /* Adjusted Gap to match the compact spacing in reference image */
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 20px; /* Reduced gap for closer alignment */
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav ul li a { 
+            text-decoration: none; 
+            color: #333; /* Darker text for better contrast on white */
+            font-weight: 700; /* Bolder weight as seen in image */
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: 0.3s ease;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* --- SUBMISSION FORM STYLE --- */
+        .submit-container { padding: 60px 8%; max-width: 900px; margin: auto; }
+        .form-card { background: var(--light-dark); padding: 40px; border-radius: 15px; border: 1px solid #222; }
+        .form-header { text-align: center; margin-bottom: 40px; }
+        .form-header h2 { font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--gold); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; color: var(--gold); font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px; font-family: 'Poppins';
+        }
+
+        .file-upload-wrapper {
+            border: 2px dashed #444; padding: 30px; text-align: center; border-radius: 10px; cursor: pointer; transition: 0.3s;
+        }
+        .file-upload-wrapper:hover { border-color: var(--gold); background: rgba(212,175,55,0.05); }
+        .file-upload-wrapper i { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+        
+        .submit-ad-btn {
+            background: var(--gold); color: #000; width: 100%; padding: 18px; border: none; border-radius: 8px; font-weight: 800; font-size: 1rem; text-transform: uppercase; cursor: pointer; margin-top: 20px;
+        }
+
+        .notice-box { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px; margin-top: 30px; font-size: 0.8rem; color: #888; border-left: 4px solid var(--gold); }
+
+        @media (max-width: 768px) {
+            header { padding: 8px 3%; }
+            nav ul { gap: 10px; }
+            nav ul li a { font-size: 0.6rem; }
+            .logo img { height: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Clintzy Arts World Logo">
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li> 
+          <li><a href="ads.html">Ads</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="submit-container">
+        <div class="form-header">
+            <h2>Submit Creative</h2>
+            <p>Upload your video or image assets to begin your campaign.</p>
+        </div>
+
+        <div class="form-card">
+            <form action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input type="text" name="business_name" placeholder="Enter your business name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Selected Plan</label>
+                    <select name="plan">
+                        <option value="starter">Starter (₦10k/wk)</option>
+                        <option value="pro" selected>Business Pro (₦30k/2wks)</option>
+                        <option value="enterprise">Enterprise (₦50k/1mo)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ad Media (Video or Image)</label>
+                    <div class="file-upload-wrapper" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Click to upload MP4 or JPG/PNG</p>
+                        <input type="file" id="fileInput" name="ad_file" style="display:none;" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Destination Link (WhatsApp/Website)</label>
+                    <input type="text" name="ad_link" placeholder="https://wa.me/your-number">
+                </div>
+
+                <div class="form-group">
+                    <label>Short Ad Description</label>
+                    <textarea name="description" rows="3" placeholder="Explain what your ad is about..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-ad-btn">Send for Approval</button>
+            </form>
+
+            <div class="notice-box">
+                <p><strong>Note:</strong> After clicking submit, our team will review your content. Once approved, you will receive a payment link via WhatsApp or Email to activate your slot.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom" style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem;">
+            © 2025 Clintzy Art's World | Creative Submission Portal
+        </div>
+    </footer>
+
+</body>
+</html>
