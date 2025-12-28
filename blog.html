@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Clintzy Art's World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A;
+            --light-dark: #161616;
+            --white: #ffffff;
+        }
+
+        body { background-color: var(--dark); color: var(--white); font-family: 'Poppins', sans-serif; margin: 0; line-height: 1.6; }
+
+        /* --- HEADER & NAV (MATCHED TO REFERENCE) --- */
+        header { 
+            background: #ffffff; 
+            padding: 10px 5%; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+
+        .logo img { height: 40px; width: auto; display: block; }
+
+        nav ul { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; }
+
+        nav ul li a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 700; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+        }
+
+        nav ul li a.active { color: var(--gold); }
+
+        /* --- VIDEO AD AREA --- */
+        .top-video-ad-area { background: #111; padding: 15px 0; border-bottom: 1px solid #222; }
+        .video-ad-slider { display: flex; overflow-x: auto; gap: 15px; padding: 0 5%; scrollbar-width: none; }
+        .video-ad-slider::-webkit-scrollbar { display: none; }
+        .video-ad-card { min-width: 280px; height: 150px; background: #1c1c1e; border-radius: 12px; position: relative; overflow: hidden; border: 1px solid #333; }
+        .video-ad-card video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .open-overlay { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); color: white; padding: 5px 12px; border-radius: 20px; font-size: 11px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); font-weight: bold; }
+
+        /* --- BLOG GRID --- */
+        .blog-container { padding: 60px 5%; max-width: 1400px; margin: 0 auto; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        
+        .blog-card { background: var(--light-dark); border-radius: 15px; border: 1px solid #222; overflow: hidden; transition: 0.3s; }
+        .blog-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .blog-img { width: 100%; height: 200px; object-fit: cover; }
+        .blog-content { padding: 25px; }
+        .blog-content h3 { font-family: 'Playfair Display'; font-size: 1.4rem; color: var(--gold); margin-bottom: 10px; }
+        .blog-content p { color: #bbb; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .read-more { 
+            color: var(--gold); 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 4px;
+            transition: 0.3s;
+        }
+        .read-more:hover { color: #fff; border-color: #fff; }
+
+        /* --- MIDDLE AD --- */
+        .middle-image-ad-area { width: 100%; padding: 40px 0; display: flex; justify-content: center; }
+        .image-banner-ad { background: #fff; width: 100%; max-width: 970px; height: 90px; display: flex; align-items: center; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; padding: 0 20px; }
+        .image-banner-ad img { height: 50px; margin-right: 20px; }
+        .banner-text-content { flex-grow: 1; color: #333; }
+        .banner-text-content h5 { margin: 0; font-size: 1.1rem; color: #d32f2f; }
+        .banner-text-content p { margin: 0; font-size: 0.8rem; color: #666; }
+
+        /* --- FOOTER --- */
+        footer { background: #000; padding: 60px 8% 20px; border-top: 2px solid var(--gold); margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .footer-column h3 { color: var(--gold); font-family: 'Playfair Display'; font-size: 1.5rem; margin-bottom: 20px; }
+        .footer-column p, .footer-column a { color: #888; font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+        .footer-column a:hover { color: var(--gold); }
+        .footer-socials { display: flex; gap: 15px; margin-top: 15px; }
+        .footer-socials a { font-size: 1.2rem; color: #fff; display: inline-block; }
+        .footer-bottom { text-align: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 3%; }
+            nav ul { gap: 12px; }
+            nav ul li a { font-size: 0.65rem; }
+            .image-banner-ad { height: auto; flex-direction: column; text-align: center; padding: 20px; }
+            .image-banner-ad img { margin-bottom: 10px; margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav>
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="ads.html">Ads</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="top-video-ad-area">
+        <div class="video-ad-slider">
+            <div class="video-ad-card"><video autoplay muted loop playsinline><source src="ad-video-1.mp4"></video><a href="https://wa.me/2347051337399" class="open-overlay">Open</a></div>
+            <div class="video-ad-card"><video autoplay muted loop playsinline><source src="ad-video-2.mp4"></video><a href="https://wa.me/2347051337399" class="open-overlay">Open</a></div>
+            <div class="video-ad-card"><video autoplay muted loop playsinline><source src="ad-video-3.mp4"></video><a href="https://wa.me/2347051337399" class="open-overlay">Open</a></div>
+        </div>
+    </div>
+
+    <main class="blog-container">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-family: 'Playfair Display'; font-size: 3rem; color: var(--gold);">Art Insights</h2>
+            <p style="color: #888;">Expert advice on framing, preservation, and digital decor.</p>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="blog1.jpg" class="blog-img" alt="Framing">
+                <div class="blog-content">
+                    <h3>Choosing the Right Frame</h3>
+                    <p>Learn how to match your artwork with the perfect wood texture and color.</p>
+                    <a href="reader.html?url=https://www.architecturaldigest.com/story/how-to-choose-the-perfect-picture-frame" class="read-more">Read Story</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="blog2.jpg" class="blog-img" alt="Preservation">
+                <div class="blog-content">
+                    <h3>Preserving Your Memories</h3>
+                    <p>Why UV-protection glass is essential for your vintage photographs.</p>
+                    <a href="reader.html?url=https://www.artnews.com/art-news/news/how-to-preserve-photographs-1234579294/" class="read-more">Read Story</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="middle-image-ad-area">
+            <div class="image-banner-ad">
+                <img src="airtel-style-logo.jpg" alt="Partner">
+                <div class="banner-text-content">
+                    <h5>Upgrade to Premium Frames</h5>
+                    <p>Get 20% off when you order more than three frames this week.</p>
+                </div>
+                <a href="ads.html" class="read-more" style="border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px;">LEARN MORE</a>
+            </div>
+        </div>
+
+        <div class="blog-grid" style="margin-top: 30px;">
+            <article class="blog-card">
+                <img src="blog3.jpg" class="blog-img" alt="Digital">
+                <div class="blog-content">
+                    <h3>The Digital Shift</h3>
+                    <p>How digital assets are changing the way we decorate modern offices.</p>
+                    <a href="reader.html?url=https://www.artnews.com/digital-trends" class="read-more">Read Story</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="blog4.jpg" class="blog-img" alt="Minimalist">
+                <div class="blog-content">
+                    <h3>Modern Minimalist Decor</h3>
+                    <p>Less is more: Using sleek frames for a clean, professional environment.</p>
+                    <a href="reader.html?url=https://www.architecturaldigest.com/minimalist-tips" class="read-more">Read Story</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>CLINTZY ART</h3>
+                <p>Imagine Tomorrow, Creating Today. Kano's premier destination for framing and digital excellence.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/2347051337399"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="blog.html">Blog</a>
+                <a href="ads.html">Advertise</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 CLINTZY ART'S WORLD | Imagine Tomorrow, Creating Today
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347051337399" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
