@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertise With Us | Clintzy Art's World</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A;
+            --light-dark: #161616;
+            --white: #ffffff;
+        }
+
+        body { 
+            background-color: var(--dark); 
+            color: var(--white); 
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- EXACT HEADER MATCH FROM REFERENCE IMAGE --- */
+        header { 
+            background: #ffffff; 
+            padding: 10px 4%; /* Tight vertical padding as seen in image */
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+        }
+
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1400px; /* Wider container to push logo and links to edges */
+            margin: 0 auto; 
+        }
+
+        .logo img { 
+            height: 35px; /* Scaled height to match image proportion */
+            width: auto; 
+            display: block; 
+            object-fit: contain;
+        }
+
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 20px; /* Balanced spacing between nav items */
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav ul li a { 
+            text-decoration: none; 
+            color: #333; /* Dark gray text from image */
+            font-weight: 700; /* Bold links as per screenshot */
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            transition: 0.3s ease;
+        }
+
+        nav ul li a.active, nav ul li a:hover { 
+            color: var(--gold); 
+        }
+
+        /* --- ADS HERO --- */
+        .ads-hero { padding: 80px 8% 40px; text-align: center; }
+        .ads-hero h1 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 3rem; margin-bottom: 15px; }
+        .ads-hero p { color: #888; font-size: 1.1rem; max-width: 600px; margin: auto; }
+
+        .preview-label { text-align: center; color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 800; }
+
+        /* --- PRICING GRID --- */
+        .pricing-section { padding: 60px 8% 100px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .price-card { background: var(--light-dark); padding: 50px 30px; border-radius: 20px; border: 1px solid #222; text-align: center; transition: 0.4s ease; position: relative; }
+        .price-card.featured { border: 2px solid var(--gold); background: #0f0f0f; transform: scale(1.05); }
+        .price-card h2 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 3rem; margin-bottom: 20px; }
+        .price-card h2 span { font-size: 1rem; color: #666; }
+        .price-features { list-style: none; padding: 0; margin: 0 0 30px 0; color: #bbb; font-size: 0.9rem; }
+        .select-btn { display: block; background: transparent; color: var(--gold); padding: 15px; border-radius: 8px; text-decoration: none; font-weight: 700; border: 2px solid var(--gold); transition: 0.3s; }
+        .featured .select-btn { background: var(--gold); color: #000; }
+
+        /* --- FOOTER MATCHED TO OTHER PAGES --- */
+        footer { 
+            background: #000; 
+            padding: 60px 8% 20px; 
+            border-top: 2px solid var(--gold); 
+            margin-top: 50px; 
+        }
+
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .footer-column h3 { color: var(--gold); font-family: 'Playfair Display'; font-size: 1.5rem; margin-bottom: 20px; }
+        .footer-column p, .footer-column a { color: #888; font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 12px; }
+        .footer-column a:hover { color: var(--gold); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid #111; margin-top: 40px; color: #444; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 4%; }
+            nav ul { gap: 10px; }
+            nav ul li a { font-size: 0.65rem; }
+            .logo img { height: 28px; }
+            .price-card.featured { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.png" alt="Clintzy Arts World Logo">
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="ads.html" class="active">Ads</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section class="ads-hero">
+            <h1>Advertising Plans</h1>
+            <p>Showcase your brand to thousands of art enthusiasts and creative professionals.</p>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <h2>₦10k<span>/1wk</span></h2>
+                    <ul class="price-features">
+                        <li>Standard Image Banner</li>
+                        <li>Sub-page Placement</li>
+                        <li>Weekly Performance Report</li>
+                    </ul>
+                    <a href="https://wa.me/2347051337399" class="select-btn">Get Started</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--gold); color:#000; padding:5px 20px; border-radius:20px; font-size:0.7rem; font-weight:800;">MOST POPULAR</div>
+                    <h3>Business Pro</h3>
+                    <h2>₦30k<span>/2wks</span></h2>
+                    <ul class="price-features">
+                        <li>Video & Image Formats</li>
+                        <li>Priority Feed Placement</li>
+                        <li>Blog Content Integration</li>
+                    </ul>
+                    <a href="https://wa.me/2347051337399" class="select-btn">Choose Plan</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <h2>₦50k<span>/1mo</span></h2>
+                    <ul class="price-features">
+                        <li>Full Platform Takeover</li>
+                        <li>Home Page Hero Slider</li>
+                        <li>Social Media Shoutouts</li>
+                    </ul>
+                    <a href="https://wa.me/2347051337399" class="select-btn">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>CLINTZY ART</h3>
+                <p>Imagine Tomorrow, Creating Today. Kano's premier destination for framing and digital excellence.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 CLINTZY ART'S WORLD | Imagine Tomorrow, Creating Today</div>
+    </footer>
+
+</body>
+</html>
