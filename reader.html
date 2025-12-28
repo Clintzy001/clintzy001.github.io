@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Room | Clintzy Art's World</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100vh; overflow: hidden; background: #000; }
+        
+        .reader-nav {
+            background: #fff;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            box-sizing: border-box;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .btn-back {
+            color: #333;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            border: 1px solid #eee;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 60px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reader-nav">
+        <img src="logo.png" alt="Logo" style="height: 30px;">
+        <a href="blog.html" class="btn-back">← Back to Blog</a>
+    </div>
+
+    <iframe id="articleFrame" src=""></iframe>
+
+    <script>
+        // This script grabs the URL from the address bar and puts it in the iframe
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleUrl = urlParams.get('url');
+        
+        if (articleUrl) {
+            document.getElementById('articleFrame').src = articleUrl;
+        } else {
+            // If no URL is found, go back to blog
+            window.location.href = 'blog.html';
+        }
+    </script>
+</body>
+</html>
