@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clintzy Art's World | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Layout */
+        :root { --gold: #D4AF37; --dark: #0A0A0A; --white: #ffffff; }
+        html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
+        main { flex: 1 0 auto; }
+        body { background-color: var(--dark); color: var(--white); font-family: 'Poppins', sans-serif; }
+
+        /* Navigation */
+        header { background: #ffffff; padding: 12px 6%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 10px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo img { height: 30px; width: auto; display: block; }
+        nav ul { display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; }
+        nav ul li a { 
+            text-decoration: none; 
+            color: #555; 
+            font-weight: 600; 
+            font-size: 0.65rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.2px; 
+            transition: 0.3s; 
+        }
+        nav ul li a.active, nav ul li a:hover { color: var(--gold); }
+
+        /* Section Styling */
+        .section-padding { padding: 80px 8%; }
+        .gold-text { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: #161616; padding: 40px 30px; border-radius: 15px; border: 1px solid #222; text-align: center; transition: 0.3s; }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; border: 1px solid #333; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        
+        /* Mission Image Style */
+        .mission-img { width: 100%; max-width: 800px; height: 350px; object-fit: cover; border-radius: 20px; border: 1px solid var(--gold); margin-bottom: 30px; }
+
+        /* Ads Banner Size Preservation */
+        .ad-box { background: #111; border: 2px dashed var(--gold); padding: 40px; border-radius: 15px; text-align: center; max-width: 700px; margin: 40px auto 0; }
+        .ad-banner-img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; }
+
+        /* Unified Footer */
+        footer { background: #000; padding: 60px 8% 20px; border-top: 2px solid var(--gold); color: #fff; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .footer-column h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 20px; font-size: 1.5rem; }
+        .social-icons { display: flex; gap: 15px; margin-top: 15px; }
+        .social-icons a { width: 40px; height: 40px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: 0.3s; }
+        .footer-bottom { text-align: center; border-top: 1px solid #222; margin-top: 50px; padding-top: 25px; font-size: 0.8rem; color: #666; }
+        
+        .call-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: #000; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 4%; }
+            nav ul { gap: 12px; }
+            nav ul li a { font-size: 0.55rem; }
+            .logo img { height: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.png" alt="Clintzy Arts World Logo">
+        </div>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="ads.html">Ads</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('hero-img.jpg'); background-size: cover; background-position: center; text-align: center; padding: 120px 8%;">
+            <h1 style="font-size: 3.5rem;" class="gold-text">Clintzy Art's World</h1>
+            <p style="color: #bbb; max-width: 700px; margin: 20px auto; line-height: 1.6;">Excellence in Premium Framing, Modern Web Design, and Creative Branding.</p>
+            <a href="shop.html" class="call-btn">Explore Shop</a>
+        </section>
+
+        <section class="section-padding" style="background: #000;">
+            <h2 style="text-align: center; font-size: 2.5rem;" class="gold-text">Our Specialties</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <img src="framing-service.jpg" alt="Picture Framing">
+                    <h3 class="gold-text">Picture Framing</h3>
+                    <p style="color: #888;">Museum-quality framing for your art.</p>
+                </div>
+                <div class="card">
+                    <img src="web-service.jpg" alt="Web Design">
+                    <h3 class="gold-text">Web Design</h3>
+                    <p style="color: #888;">Responsive business websites.</p>
+                </div>
+                <div class="card">
+                    <img src="branding-service.jpg" alt="Branding">
+                    <h3 class="gold-text">Branding</h3>
+                    <p style="color: #888;">Professional logos and identity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: #0A0A0A; text-align: center; border-top: 1px solid #222;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;" class="gold-text">Our Mission</h2>
+            <img src="mission-brand.jpg" class="mission-img" alt="Clintzy Arts Workshop">
+            <p style="max-width: 800px; margin: 0 auto; color: #ccc; line-height: 1.8; font-size: 1.1rem;">
+                At Clintzy Art's World, our mission is to redefine space and identity. We merge traditional framing artistry with modern digital solutions to empower creators and businesses in Kano and beyond.
+            </p>
+        </section>
+
+        <section class="section-padding" style="background: #000;">
+            <h2 style="text-align: center; font-size: 2.5rem;" class="gold-text">Partner With Us</h2>
+            <div class="ad-box">
+                <img src="ads-banner-sample.jpg" class="ad-banner-img" alt="Ad Space Available">
+                <h4 style="color: white; font-size: 1.5rem; margin-bottom: 10px;">Advertise Your Brand</h4>
+                <p style="color: #888; margin-bottom: 15px;">Starting from ₦5,000/week</p>
+                <a href="ads.html" style="color: var(--gold); text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">View Ad Plans →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="footer-logo">CLINTZY ART</h3>
+                <p class="footer-tagline">Excellence in Picture Framing & Web Innovation.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/2347051337399" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Visit Our Studio</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Hajj Camp, Kano State, Nigeria</p>
+                <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
+                <a href="tel:+2347051337399" class="call-btn">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Clintzy Art's World | All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347051337399" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
