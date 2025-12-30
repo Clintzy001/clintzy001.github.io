@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Room | Clintzy Art's World</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3912104801311509" crossorigin="anonymous"></script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        // Top Banner Slot - Flexible for horizontal spaces
+        googletag.defineSlot('/3912104801311509/Top_Banner', [[728, 90], [468, 60]], 'div-gpt-ad-top').addService(googletag.pubads());
+        
+        // Bottom Sticky Slot - Restricted to smaller height (50px-60px) to avoid blocking text
+        googletag.defineSlot('/3912104801311509/Middle_Ad', [[320, 50], [468, 60]], 'div-gpt-ad-middle').addService(googletag.pubads());
+        
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --gold: #D4AF37; 
+            --dark: #0A0A0A;
+        }
+        
+        body, html { margin: 0; padding: 0; height: 100vh; overflow: hidden; background: var(--dark); font-family: 'Poppins', sans-serif; }
+        
+        .reader-nav {
+            background: #ffffff;
+            padding: 0 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px; /* Reduced from 70px to save space */
+            box-sizing: border-box;
+            border-bottom: 2px solid var(--gold);
+            z-index: 1001;
+            position: relative;
+        }
+
+        .logo img { height: 30px; width: auto; display: block; }
+
+        #div-gpt-ad-top {
+            display: flex;
+            justify-content: center;
+            max-height: 50px;
+            overflow: hidden;
+        }
+
+        .btn-back {
+            color: #333;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            border: 1.5px solid #333;
+            padding: 6px 12px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* COMPACT BOTTOM AD BAR */
+        .bottom-ad-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9); /* Dark background with transparency */
+            backdrop-filter: blur(5px); /* Softens the look */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            height: 60px; /* Locked height so it doesn't grow too large */
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        #div-gpt-ad-middle {
+            width: 100%;
+            max-width: 468px; /* Prevents ad from spanning full desktop width */
+            display: flex;
+            justify-content: center;
+        }
+
+        #loader-container {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(212, 175, 55, 0.1);
+            border-top: 3px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 60px);
+            border: none;
+            background: #fff;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            /* Extra padding at the bottom so the last line of text 
+               is visible above the 60px ad bar */
+            padding-bottom: 70px; 
+            box-sizing: border-box;
+        }
+        
+        iframe.loaded { opacity: 1; }
+
+        @media (max-width: 768px) {
+            #div-gpt-ad-top { display: none; } 
+            .btn-back span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reader-nav">
+        <div class="logo">
+            <img src="logo.svg" alt="CAW Logo">
+        </div>
+
+        <div id="div-gpt-ad-top">
+            <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-top'); });</script>
+        </div>
+
+        <a href="blog.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> <span>Back</span>
+        </a>
+    </div>
+
+    <div id="loader-container">
+        <div class="spinner"></div>
+    </div>
+
+    <iframe id="articleFrame" src="" allowfullscreen></iframe>
+
+    <div class="bottom-ad-container">
+        <div id="div-gpt-ad-middle">
+            <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-middle'); });</script>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleUrl = urlParams.get('url');
+        const frame = document.getElementById('articleFrame');
+        const loader = document.getElementById('loader-container');
+        
+        if (articleUrl) {
+            frame.src = decodeURIComponent(articleUrl);
+            frame.onload = function() {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    frame.classList.add('loaded');
+                }, 500);
+            };
+        } else {
+            window.location.href = 'blog.html';
+        }
+    </script>
+</body>
+</html>
