@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Room | Clintzy Art's World</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --gold: #D4AF37; 
+            --dark: #0A0A0A;
+        }
+        
+        body, html { margin: 0; padding: 0; height: 100vh; overflow: hidden; background: var(--dark); font-family: 'Poppins', sans-serif; }
+        
+        /* Navigation Bar - Matches site header height and style */
+        .reader-nav {
+            background: #ffffff;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            box-sizing: border-box;
+            border-bottom: 2px solid var(--gold);
+            z-index: 1001;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo img { height: 35px; width: auto; display: block; }
+
+        .btn-back {
+            color: #333;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1.5px solid #333;
+            padding: 8px 18px;
+            border-radius: 50px; /* Modern rounded style */
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-back:hover { 
+            background: var(--gold); 
+            border-color: var(--gold); 
+            color: #000;
+            transform: translateX(-3px);
+        }
+
+        /* Premium Loader Styling */
+        #loader-container {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(212, 175, 55, 0.1);
+            border-top: 3px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 0.8s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        #loader-container p { 
+            color: var(--gold); 
+            font-size: 0.7rem; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* The Iframe Area */
+        iframe {
+            width: 100%;
+            height: calc(100vh - 70px);
+            border: none;
+            background: #fff;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        iframe.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reader-nav">
+        <div class="logo">
+            <img src="logo.svg" alt="CAW Logo">
+        </div>
+        <a href="blog.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+    </div>
+
+    <div id="loader-container">
+        <div class="spinner"></div>
+        <p>Opening Article</p>
+    </div>
+
+    <iframe id="articleFrame" src="" allowfullscreen></iframe>
+
+    <script>
+        // Get the 'url' parameter from the address bar
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleUrl = urlParams.get('url');
+        const frame = document.getElementById('articleFrame');
+        const loader = document.getElementById('loader-container');
+        
+        if (articleUrl) {
+            // Clean up URL if needed and set as frame source
+            frame.src = decodeURIComponent(articleUrl);
+
+            // Hide loader and fade in iframe when content arrives
+            frame.onload = function() {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    frame.classList.add('loaded');
+                }, 500);
+            };
+        } else {
+            // If no URL is provided, send them back to the blog index
+            window.location.href = 'blog.html';
+        }
+    </script>
+</body>
+</html>
