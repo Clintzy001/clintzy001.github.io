@@ -1,0 +1,19 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap');
+      .logo-text {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 32px;
+      }
+      .gold { fill: #D4AF37; }
+      .black { fill: #000000; }
+    </style>
+  </defs>
+  <text x="5" y="32" class="logo-text">
+    <tspan class="gold">C</tspan>
+    <tspan class="black">A</tspan>
+    <tspan class="gold">W</tspan>
+  </text>
+</svg>
