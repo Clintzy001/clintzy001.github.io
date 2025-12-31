@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clintzy Art's World | Home</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3912104801311509" crossorigin="anonymous"></script>
+
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/3912104801311509/Top_Banner', [728, 90], 'div-gpt-ad-top').addService(googletag.pubads());
+        googletag.defineSlot('/3912104801311509/Middle_Ad', [300, 250], 'div-gpt-ad-middle').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+
+    <script src="ads-manager.js" defer></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --dark: #0A0A0A; --white: #ffffff; }
+        html, body { height: 100%; margin: 0; display: flex; flex-direction: column; scroll-behavior: smooth; }
+        main { flex: 1 0 auto; }
+        body { background-color: var(--dark); color: var(--white); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+
+        /* --- HEADER --- */
+        header { background: #ffffff; padding: 10px 4%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .logo img { height: 40px; width: auto; display: block; }
+
+        .nav-list { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; align-items: center; }
+        .nav-list li a { text-decoration: none; color: #333; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s; }
+        .nav-list li a i { margin-right: 5px; color: var(--gold); font-size: 0.8rem; }
+        .nav-list li a.active, .nav-list li a:hover { color: var(--gold); }
+
+        /* --- MOBILE MENU --- */
+        .menu-btn { display: none; position: relative; justify-content: center; align-items: center; width: 30px; height: 30px; cursor: pointer; z-index: 2100; }
+        .menu-btn__burger { width: 22px; height: 2px; background: #333; transition: all .4s ease-in-out; border-radius: 2px; }
+        .menu-btn__burger::before, .menu-btn__burger::after { content: ''; position: absolute; width: 22px; height: 2px; background: #333; transition: all .4s ease-in-out; border-radius: 2px; }
+        .menu-btn__burger::before { transform: translateY(-8px); }
+        .menu-btn__burger::after { transform: translateY(8px); }
+        
+        .menu-btn.active .menu-btn__burger { transform: translateX(-50px); background: transparent; }
+        .menu-btn.active .menu-btn__burger::before { transform: rotate(45deg) translate(35px, -35px); background: var(--gold); }
+        .menu-btn.active .menu-btn__burger::after { transform: rotate(-45deg) translate(35px, 35px); background: var(--gold); }
+
+        @media (max-width: 768px) {
+            .menu-btn { display: flex; }
+            .nav-list {
+                position: fixed; top: 70px; right: -110%; width: 75%; height: 500px; background: #0D0D0D; 
+                display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 35px;
+                transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); z-index: 2000;
+                border-radius: 40px 0 0 40px; box-shadow: -15px 10px 40px rgba(0,0,0,0.8);
+                border: 1px solid rgba(212, 175, 55, 0.2);
+            }
+            .nav-list.active { right: 0; }
+            .nav-list li a { color: var(--white) !important; font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; }
+            .nav-list li a i { display: none; } 
+            .hero-btns { flex-direction: column; gap: 15px; }
+        }
+
+        /* --- HERO BUTTONS --- */
+        .hero-btns { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+        .btn-primary { background: var(--gold); color: #000; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 33px; border-radius: 50px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); }
+
+        /* --- ADS AREA --- */
+        .mixed-ads-container { padding: 20px 8% 60px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .inject-top-ad, .inject-video-ad { background: #111; border-radius: 15px; overflow: hidden; border: 1px solid #222; min-height: 150px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        
+        /* --- SPECIALTIES --- */
+        .section-padding { padding: 80px 8%; }
+        .gold-text { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: #111; padding: 15px; border-radius: 15px; border: 3px solid var(--gold); text-align: center; }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        /* --- MISSION --- */
+        .mission-video-container { max-width: 800px; margin: 0 auto; padding: 10px; background: #111; border: 3px solid var(--gold); border-radius: 15px; }
+        .framed-video { width: 100%; border-radius: 8px; }
+
+        /* --- FOOTER --- */
+        footer { background: #000; padding: 60px 8% 20px; border-top: 2px solid var(--gold); margin-top: 50px; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; }
+        .social-icons { display: flex; gap: 15px; margin-top: 15px; justify-content: center; }
+        .social-icons a { width: 40px; height: 40px; background: #222; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; }
+        .footer-bottom { border-top: 1px solid #111; margin-top: 50px; padding-top: 25px; font-size: 0.8rem; color: #444; }
+
+        #backToTop { position: fixed; bottom: 100px; right: 35px; background: var(--gold); color: #000; width: 45px; height: 45px; border-radius: 50%; display: none; z-index: 99; cursor: pointer; border: none; align-items: center; justify-content: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+
+    <header>
+      <nav class="navbar">
+        <div class="logo"><img src="logo.svg" alt="CAW Logo"></div>
+        <div class="menu-btn" id="mobile-menu"><div class="menu-btn__burger"></div></div>
+        <ul class="nav-list" id="nav-menu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="ads.html"><i class="fas fa-ad"></i> Ads</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <main>
+        <section style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero-bg.jpg'); background-size: cover; background-position: center; text-align: center; padding: 150px 8%; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 10px;" class="gold-text">Clintzy Art's World</h1>
+            <p style="color: #eee; max-width: 700px; margin: 0 auto 10px; font-size: 1.2rem; font-weight: 300;">Premium Framing & Modern Web Solutions.</p>
+            
+            <div class="hero-btns">
+                <a href="shop.html" class="btn-primary">View Collections</a>
+                <a href="ads.html" class="btn-secondary">Partner With Us</a>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <h2 style="text-align: center; font-size: 2.5rem;" class="gold-text">Our Specialties</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <img src="frame_image.jpg" alt="Framing" loading="lazy">
+                    <h3 class="gold-text">Picture Framing</h3>
+                    <p style="color: #888;">Preserving memories with gold-standard care.</p>
+                </div>
+                <div class="card">
+                    <img src="web_design_image.jpg" alt="Web Design" loading="lazy">
+                    <h3 class="gold-text">Web Design</h3>
+                    <p style="color: #888;">Fast, modern, and business-ready sites.</p>
+                </div>
+                <div class="card">
+                    <img src="branding_image.jpg" alt="Branding" loading="lazy">
+                    <h3 class="gold-text">Branding</h3>
+                    <p style="color: #888;">Logo design and creative identity.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="mixed-ads-container">
+            <div class="inject-top-ad" id="div-gpt-ad-top">
+                <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-top'); });</script>
+                <div style="text-align: center; padding: 10px; width: 100%;">
+                    <a href="https://wa.me/2347051337399" target="_blank">
+                        <img src="test-ads-image.jpg" alt="Client Image Ad" style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;">
+                    </a>
+                    <p style="font-size: 10px; color: #555; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</p>
+                </div>
+            </div>
+        
+            <div class="inject-video-ad" id="div-gpt-ad-middle">
+                <script>googletag.cmd.push(function() { googletag.display('div-gpt-ad-middle'); });</script>
+                <div style="text-align: center; padding: 10px; width: 100%;">
+                    <a href="https://play.google.com/store" target="_blank" style="text-decoration: none;">
+                        <video autoplay muted loop playsinline style="width: 100%; max-height: 250px; border-radius: 8px; object-fit: cover; display: block;">
+                            <source src="your-test-ad.mp4" type="video/mp4">
+                        </video>
+                    </a>
+                    <p style="font-size: 10px; color: #555; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px;">Sponsored Video</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section-padding" style="background: #050505; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;" class="gold-text">Our Mission</h2>
+            <div class="mission-video-container">
+                <video autoplay muted loop playsinline controls class="framed-video">
+                    <source src="your-video-name.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p style="max-width: 800px; margin: 30px auto 0; color: #ccc; line-height: 1.8; font-size: 1.1rem;">At Clintzy Art's World, our mission is to redefine space and identity through museum-grade craftsmanship and digital innovation.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3 class="gold-text">CLINTZY ART</h3>
+                <p style="color:#888;">Imagine Tomorrow, Creating Today. Kano's premier destination for framing and digital excellence.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/2347051337399"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="gold-text">Support</h3>
+                <a href="contact.html" style="color:#888; text-decoration:none; display:block; margin-bottom:10px;">Contact Us</a>
+                <a href="faq.html" style="color:#888; text-decoration:none; display:block; margin-bottom:10px;">FAQ</a> 
+                <a href="privacy.html" style="color:#888; text-decoration:none; display:block; margin-bottom:10px;">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3 class="gold-text">Location</h3>
+                <p style="color:#888;">Hajj Camp, Kano State, Nigeria</p>
+                <p style="color:#888;">+234 705 133 7399</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 CLINTZY ART'S WORLD</div>
+    </footer>
+
+    <a href="https://wa.me/2347051337399" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        const menuToggle = document.querySelector('#mobile-menu');
+        const navList = document.querySelector('.nav-list');
+        const backToTopBtn = document.getElementById("backToTop");
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>
